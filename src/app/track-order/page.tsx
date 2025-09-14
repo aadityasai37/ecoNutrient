@@ -8,7 +8,7 @@ export default function TrackOrderPage() {
         <ol>
           <li>Locate your order confirmation email, which contains your order number.</li>
           <li>Enter your order number and the email address used for the order in the form below.</li>
-          <li>Click "Track Order" to view the current status.</li>
+          <li>Click &#34;Track Order&#34; to view the current status.</li>
         </ol>
         <h2>Order Status Meanings</h2>
         <ul>
