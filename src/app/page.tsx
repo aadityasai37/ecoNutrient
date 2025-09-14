@@ -18,6 +18,17 @@ export default function HomePage() {
       <section id="shop" className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <ProductCard product={sattu} />
       </section>
+
+      <section className="text-center">
+        <h2 className="text-2xl font-bold mb-6">Customer Service</h2>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <Link href="/terms" className="text-eco-green hover:underline">Terms and Conditions</Link>
+          <Link href="/privacy" className="text-eco-green hover:underline">Privacy Policy</Link>
+          <Link href="/return-replacement" className="text-eco-green hover:underline">Return and Replacement Policy</Link>
+          <Link href="/contact" className="text-eco-green hover:underline">Contact Us</Link>
+          <Link href="/track-order" className="text-eco-green hover:underline">Track Order</Link>
+        </div>
+      </section>
     </div>
   );
 }

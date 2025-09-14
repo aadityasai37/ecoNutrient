@@ -1,3 +1,8 @@
-- [x] Fix product useMemo fallback to return products[0] instead of products
-- [x] Fix variantId state initialization to use product.variants[0]?.id
-- [x] Fix variant useMemo fallback to use product.variants[0]
+# TODO: Add Customer Service Section to Landing Page
+
+- [x] Create /terms page with Terms and Conditions content
+- [x] Create /privacy page with Privacy Policy content
+- [x] Create /return-replacement page with Return and Replacement Policy content
+- [x] Create /contact page with Contact Us content
+- [x] Create /track-order page with Track Order content
+- [x] Add Customer Service section to landing page (src/app/page.tsx) with links to the above pages
