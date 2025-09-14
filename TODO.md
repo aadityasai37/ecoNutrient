@@ -1,0 +1,3 @@
+- [x] Fix product useMemo fallback to return products[0] instead of products
+- [x] Fix variantId state initialization to use product.variants[0]?.id
+- [x] Fix variant useMemo fallback to use product.variants[0]

@@ -12,17 +12,17 @@ export default function ProductPage() {
   // Always resolve to a single Product (never Product[])
   const product: Product = useMemo(() => {
     const found = products.find((p) => p.slug === String(slug));
-    return found ?? products; // fallback to first product
+    return found ?? products[0]; // fallback to first product
   }, [slug]);
 
   const { add } = useCart();
 
   // Initialize from first variant’s id (string)
-  const [variantId, setVariantId] = useState<string>(product.variants?.id ?? "");
+  const [variantId, setVariantId] = useState<string>(product.variants[0]?.id ?? "");
 
   // Derive the selected variant safely
   const variant: Variant = useMemo(
-    () => product.variants.find((v) => v.id === variantId) ?? product.variants,
+    () => product.variants.find((v) => v.id === variantId) ?? product.variants[0],
     [product, variantId]
   );
 
