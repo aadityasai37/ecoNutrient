@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Tailwind v4 theme tokens */
+@theme inline {
+  --color-background: #F7FAF7;
+  --color-foreground: #111418;
+  --color-brand: #64B34E;
+}
+
+/* Global element styles */
+:root { color-scheme: light; }
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+a { color: var(--color-brand); }
+a:hover { text-decoration: underline; }
