@@ -2,9 +2,9 @@
 
 /* Tailwind v4 theme tokens */
 @theme inline {
-  --color-background: #F7FAF7;
+  --color-background: #A8D5BA; /* light green young leaf color */
   --color-foreground: #111418;
-  --color-brand: #64B34E;
+  --color-brand: #FFFFFF; /* white */
 }
 
 /* Global element styles */
