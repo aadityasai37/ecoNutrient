@@ -5,7 +5,14 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: { extend: {} },
+  theme: {
+    extend: {
+      colors: {
+        "eco-green-light": "#69e29aff", // light green young leaf color
+        "eco-white": "#FFFFFF",
+      },
+    },
+  },
   plugins: [],
 };
 export default config;
