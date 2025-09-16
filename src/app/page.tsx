@@ -31,7 +31,7 @@ export default function HomePage() {
             data-aos-delay="200"
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            Wholesome Nutrition for a Healthy India
+            Connecting Cultures Through Native Indian Flavours
           </h1>
           <p
             data-aos="fade-up"
@@ -194,32 +194,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer Links */}
-      <section
-        data-aos="fade-up"
-        className="py-12 px-8 bg-eco-green-light text-eco-white"
-      >
-        <div className="max-w-6xl mx-auto text-center">
-          <h3
-            data-aos="fade-up"
-            data-aos-delay="200"
-            className="text-2xl font-bold mb-6"
-          >
-            Customer Service
-          </h3>
-          <div
-            data-aos="fade-up"
-            data-aos-delay="400"
-            className="grid grid-cols-2 md:grid-cols-5 gap-4"
-          >
-            <Link href="/terms" className="hover:underline">Terms</Link>
-            <Link href="/privacy" className="hover:underline">Privacy</Link>
-            <Link href="/return-replacement" className="hover:underline">Returns</Link>
-            <Link href="/contact" className="hover:underline">Contact</Link>
-            <Link href="/track-order" className="hover:underline">Track Order</Link>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 }
