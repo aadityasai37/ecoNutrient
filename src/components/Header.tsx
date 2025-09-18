@@ -10,7 +10,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-eco-green-light/80 backdrop-blur border-b border-eco-white">
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="ecoNutrient" className="h-8 w-auto" />
+          <img src="/ecoNutrient.svg" alt="ecoNutrient" className="h-8 w-auto" />
         </Link>
         <nav className="flex items-center gap-6 text-eco-white">
           <Link href="/" className="hover:underline">Home</Link>

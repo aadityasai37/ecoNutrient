@@ -26,6 +26,9 @@ export default function ProductPage() {
     [product, variantId]
   );
 
+  // State for main image
+  const [mainImage, setMainImage] = useState<string>(product.images[0] || "/next.svg");
+
   function addToCart() {
     if (!variant) return;
     add({
@@ -41,13 +44,36 @@ export default function ProductPage() {
 
   return (
     <div className="grid md:grid-cols-2 gap-10">
-      <div className="relative aspect-square bg-white rounded-xl border overflow-hidden">
-        <Image
-          src={variant?.image || "/next.svg"}
-          alt={product.name || "Product"}
-          fill
-          className="object-contain hover:scale-105 transition-transform"
-        />
+      <div>
+        <div className="relative aspect-square bg-white rounded-xl border overflow-hidden mb-4">
+          <Image
+            src={mainImage}
+            alt={product.name || "Product"}
+            fill
+            className="object-contain hover:scale-105 transition-transform"
+          />
+        </div>
+
+        {/* Image Carousel */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          {product.images.map((image, index) => (
+            <button
+              key={index}
+              onClick={() => setMainImage(image)}
+              className={`flex-shrink-0 w-20 h-20 rounded-lg border-2 overflow-hidden ${
+                mainImage === image ? "border-emerald-600" : "border-gray-200"
+              }`}
+            >
+              <Image
+                src={image}
+                alt={`${product.name} ${index + 1}`}
+                width={80}
+                height={80}
+                className="object-cover w-full h-full"
+              />
+            </button>
+          ))}
+        </div>
       </div>
 
       <div>

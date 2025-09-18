@@ -26,7 +26,12 @@ export const products: Product[] = [
     name: "Sattu (Roasted Gram Flour)",
     description:
       "High‑protein, stone‑ground roasted gram flour. Great for drinks, parathas, laddoos, and everyday nutrition.",
-    images: ["/images/sattu-pack.jpg"],
+    images: [
+      "/Sattu 1.png",
+      "/Sattu 2.png",
+      "/Sattu 3.png",
+      "/Sattu 4.jpg"
+    ],
     tags: ["high-protein", "vegan", "natural"],
     variants: [
       {
@@ -35,7 +40,7 @@ export const products: Product[] = [
         label: "500 g",
         weightG: 500,
         priceINR: 149,
-        image: "/images/sattu-pack.jpg",
+        image: "/Sattu 1.png",
         shippingWeightG: 700,
         stock: 100,
       },
@@ -45,7 +50,7 @@ export const products: Product[] = [
         label: "1 kg",
         weightG: 1000,
         priceINR: 279,
-        image: "/images/sattu-pack.jpg",
+        image: "/Sattu 1.png",
         shippingWeightG: 1200,
         stock: 100,
       },
