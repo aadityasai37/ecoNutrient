@@ -1,8 +1,8 @@
-# TODO: Add Customer Service Section to Landing Page
+# TODO: Implement UI/UX Improvements
 
-- [x] Create /terms page with Terms and Conditions content
-- [x] Create /privacy page with Privacy Policy content
-- [x] Create /return-replacement page with Return and Replacement Policy content
-- [x] Create /contact page with Contact Us content
-- [x] Create /track-order page with Track Order content
-- [x] Add Customer Service section to landing page (src/app/page.tsx) with links to the above pages
+- [ ] Add a small black banner on top with shipping message
+- [ ] Add 'Home' tab to navigation bar linking to '/'
+- [ ] Update header layout with logo left, nav right, change 'About' to 'About Us', replace 'Cart' with icon and tooltip
+- [ ] Implement cart icon with real-time badge showing item count from localStorage
+- [ ] Change welcome message on landing page to 'Connecting Cultures Through Native Indian Flavours'
+- [ ] Move policy links from main page to footer under 'Customer Service' section
