@@ -14,13 +14,13 @@ export default function AnimatedText({ items, className = "" }: AnimatedTextProp
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-    }, 3000); // 3 seconds cycle
+    }, 2500); // 2.5 seconds cycle
 
     return () => clearInterval(interval);
   }, [items.length]);
 
   return (
-    <div className={`text-lg md:text-xl text-white/90 ${className}`}>
+    <div className={`bg-white text-primary font-bold text-xl md:text-2xl px-4 py-2 rounded-lg ${className}`}>
       <AnimatePresence mode="wait">
         <motion.span
           key={currentIndex}
@@ -28,9 +28,9 @@ export default function AnimatedText({ items, className = "" }: AnimatedTextProp
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
-          className="inline-block"
+          className="inline-block text-primary"
         >
-          <span className="text-primary font-semibold">{items[currentIndex]}</span>
+          <span className="text-primary">•</span> {items[currentIndex]}
         </motion.span>
       </AnimatePresence>
     </div>
