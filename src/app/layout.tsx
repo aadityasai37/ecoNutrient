@@ -1,26 +1,24 @@
 import "./globals.css";
 import { CartProvider } from "@/context/cartContext";
 import Link from "next/link";
-import Header from "@/components/Header";
 
 export const metadata = {
   title: "EcoNutrient — Native Indian Flavours",
-  description: "Wholesome nutrition, sustainably made. Connecting cultures through native Indian flavours.",
+  description: "Discover authentic native Indian flavors with EcoNutrient. Wholesome nutrition, sustainably made.",
   themeColor: "#70AD47",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>
+      <body className="min-h-screen bg-primary text-black font-sans" suppressHydrationWarning={true}>
         <CartProvider>
-          <div className="bg-black text-white text-center py-2 text-sm font-bold">
+          <div className="bg-black text-white text-center py-2 text-sm font-bold border-b border-black/10">
             ENJOY FREE SHIPPING ON PREPAID ORDERS
           </div>
-          <Header />
-          <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
-          <footer className="border-t border-eco-white bg-eco-green-light">
-            <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-eco-white">
+          {children}
+          <footer className="border-t border-black/10 bg-white">
+            <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-black">
               <div className="mb-6">
                 <h3 className="text-lg font-bold mb-4">Customer Service</h3>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -31,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Link href="/track-order" className="hover:underline">Track Order</Link>
                 </div>
               </div>
-              <div className="border-t border-eco-white pt-4">
+              <div className="border-t border-black/10 pt-4">
                 © {new Date().getFullYear()} ecoNutrient • All rights reserved.
               </div>
             </div>

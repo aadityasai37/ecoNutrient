@@ -40,7 +40,7 @@ export default function Header() {
         <Link
           href="/"
           aria-label="EcoNutrient home"
-          className="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="flex items-center bg-white/90 rounded px-2 py-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <Image
             src="/assets/Header_Logo.svg"
@@ -57,8 +57,8 @@ export default function Header() {
               key={item.href}
               href={item.href}
               aria-label={item.label}
-              className={`group relative px-3 py-2 transition-colors duration-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 group-hover:after:w-full ${
-                pathname === item.href ? "text-black after:w-full" : ""
+              className={`group relative px-3 py-2 transition-all duration-200 text-black font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary hover:shadow-lg hover:shadow-black/50 active:bg-black active:text-white ${
+                pathname === item.href ? "text-black bg-white shadow-md" : ""
               }`}
             >
               {item.label}
@@ -129,8 +129,8 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 aria-label={item.label}
-                className={`block text-black hover:text-white transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
-                  pathname === item.href ? "text-black" : ""
+                className={`block text-black transition-colors duration-300 font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:bg-black active:text-white ${
+                  pathname === item.href ? "text-black bg-white" : ""
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
