@@ -5,7 +5,36 @@ import Link from "next/link";
 export const metadata = {
   title: "EcoNutrient — Native Indian Flavours",
   description: "Discover authentic native Indian flavors with EcoNutrient. Wholesome nutrition, sustainably made.",
-  themeColor: "#70AD47",
+  keywords: "Indian spices, traditional foods, organic nutrition, sattu, millets, cold-pressed oils",
+  openGraph: {
+    title: "EcoNutrient — Native Indian Flavours",
+    description: "Connecting cultures through native Indian flavors. High-protein, natural products.",
+    url: "https://econutrient.com",
+    siteName: "EcoNutrient",
+    images: [
+      {
+        url: "/Header_Logo.svg",
+        width: 800,
+        height: 600,
+        alt: "EcoNutrient Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "EcoNutrient — Native Indian Flavours",
+    description: "Discover authentic native Indian flavors with EcoNutrient.",
+    images: ["/Header_Logo.svg"],
+  },
+  other: [
+    { rel: 'preload', href: '/Hero_Bg.svg', as: 'image' },
+  ],
+};
+
+export const viewport = {
+  themeColor: '#70AD47',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

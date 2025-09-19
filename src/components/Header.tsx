@@ -43,7 +43,7 @@ export default function Header() {
           className="flex items-center bg-white/90 rounded px-2 py-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <Image
-            src="/assets/Header_Logo.svg"
+            src="/Header_Logo.svg"
             alt="EcoNutrient"
             width={132}
             height={36}
@@ -57,8 +57,8 @@ export default function Header() {
               key={item.href}
               href={item.href}
               aria-label={item.label}
-              className={`group relative px-3 py-2 transition-all duration-200 text-black font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary hover:shadow-lg hover:shadow-black/50 active:bg-black active:text-white ${
-                pathname === item.href ? "text-black bg-white shadow-md" : ""
+              className={`group relative px-3 py-2 transition-all duration-200 text-black font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+                pathname === item.href ? "text-black" : ""
               }`}
             >
               {item.label}
