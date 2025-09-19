@@ -1,8 +1,3 @@
-# TODO: Implement UI/UX Improvements
-
-- [ ] Add a small black banner on top with shipping message
-- [ ] Add 'Home' tab to navigation bar linking to '/'
-- [ ] Update header layout with logo left, nav right, change 'About' to 'About Us', replace 'Cart' with icon and tooltip
-- [ ] Implement cart icon with real-time badge showing item count from localStorage
-- [ ] Change welcome message on landing page to 'Connecting Cultures Through Native Indian Flavours'
-- [ ] Move policy links from main page to footer under 'Customer Service' section
+- [x] Update src/components/Header.tsx to remove hover:shadow-lg hover:shadow-black/50 and active:bg-black active:text-white from nav links
+- [x] Change font-bold to font-medium for a more minimalist look
+- [x] Test the changes by running the development server and checking the header appearance
