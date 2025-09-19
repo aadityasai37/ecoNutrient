@@ -2,17 +2,85 @@
 
 /* Tailwind v4 theme tokens */
 @theme inline {
-  --color-background: #A8D5BA; /* light green young leaf color */
-  --color-foreground: #111418;
-  --color-brand: #FFFFFF; /* white */
+  --color-primary: #70AD47;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
 }
 
 /* Global element styles */
 :root { color-scheme: light; }
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+html, body {
+  @apply bg-primary text-black scroll-smooth;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
 }
-a { color: var(--color-brand); }
+a { color: var(--color-primary); }
 a:hover { text-decoration: underline; }
+
+/* Header background transparent */
+header {
+  background-color: transparent;
+}
+
+/* Focus visible rings */
+.focus-visible:focus-visible {
+  outline: 2px solid theme('colors.primary');
+  outline-offset: 2px;
+}
+
+/* Button primary */
+.btn-primary {
+  @apply bg-primary text-black hover:bg-white hover:text-black transition duration-300 rounded-full px-6 py-3 shadow-lg focus-visible:outline-none;
+}
+
+/* Utility classes */
+.on-dark {
+  color: white;
+}
+.card {
+  @apply rounded-xl shadow-lg bg-white text-black;
+}
+.divider {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-typewriter {
+  overflow: hidden;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  animation: typewriter 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}

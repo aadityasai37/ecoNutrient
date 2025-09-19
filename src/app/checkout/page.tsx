@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function CheckoutPage() {
-  const { items, subtotal, clear } = useCart();
+  const { items, subtotal } = useCart();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 

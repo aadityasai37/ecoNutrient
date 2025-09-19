@@ -1,4 +1,3 @@
-import { ProductCard } from "@/components/ProductCard"
 export const metadata = { title: "About • ecoNutrient" };
 export default function About() {
   return (
