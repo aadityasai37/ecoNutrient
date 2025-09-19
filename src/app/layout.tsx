@@ -4,8 +4,9 @@ import Link from "next/link";
 import Header from "@/components/Header";
 
 export const metadata = {
-  title: "ecoNutrient",
-  description: "Wholesome nutrition, sustainably made.",
+  title: "EcoNutrient — Native Indian Flavours",
+  description: "Wholesome nutrition, sustainably made. Connecting cultures through native Indian flavours.",
+  themeColor: "#70AD47",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

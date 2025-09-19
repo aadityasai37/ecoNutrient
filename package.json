@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run copy-logo && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "copy-logo": "curl -o public/assets/Header_Logo.svg https://github.com/user/repo/assets/logo.svg || echo 'Logo copy failed, using existing file'"
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "framer-motion": "^12.23.15",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"

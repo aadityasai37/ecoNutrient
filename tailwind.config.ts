@@ -8,8 +8,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "eco-green-light": "#69e29aff", // light green young leaf color
-        "eco-white": "#FFFFFF",
+        primary: "#70AD47",
+        black: "#000000",
+        white: "#FFFFFF",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
     },
   },
