@@ -30,6 +30,7 @@ export const metadata = {
   },
   other: [
     { rel: 'preload', href: '/Hero_Bg.svg', as: 'image' },
+    { rel: 'preload', href: '/assets/Header_Logo.svg', as: 'image' },
   ],
 };
 
@@ -40,7 +41,10 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-primary text-black font-sans" suppressHydrationWarning={true}>
+      <head>
+        <link rel="preload" as="image" href="/Hero_Bg.svg" fetchPriority="high" />
+      </head>
+      <body className="min-h-screen bg-white text-black font-sans" suppressHydrationWarning={true}>
         <CartProvider>
           <div className="bg-black text-white text-center py-2 text-sm font-bold border-b border-black/10">
             ENJOY FREE SHIPPING ON PREPAID ORDERS
