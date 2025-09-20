@@ -1,3 +1,15 @@
-- [x] Update src/components/Header.tsx to remove hover:shadow-lg hover:shadow-black/50 and active:bg-black active:text-white from nav links
-- [x] Change font-bold to font-medium for a more minimalist look
-- [x] Test the changes by running the development server and checking the header appearance
+# Task: Fix Hero Section Issues
+
+## Issues to Fix:
+1. Hero background SVG not loading
+2. "Native Indian Flavours" text positioning issues (gone right, not fully visible)
+3. Make "Connecting Cultures" text white and bold
+
+## Plan Implementation Steps:
+- [ ] Fix Hero background SVG path in Hero.tsx
+- [ ] Fix "Native Indian Flavours" text positioning and overflow
+- [ ] Update "Connecting Cultures" text styling (white + bold)
+- [ ] Test changes in browser
+
+## Files to Edit:
+- src/components/Hero.tsx (main fixes)

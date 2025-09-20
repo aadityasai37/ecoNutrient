@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -22,52 +22,63 @@ export default function Header() {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
+    { href: "/about", label: "About" },
     { href: "/backstage", label: "Backstage" },
     { href: "/track", label: "Track Package" },
   ];
 
   return (
-    <header
-      className={`sticky top-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? "bg-primary/90 backdrop-blur-md shadow-lg"
-          : "bg-primary/60"
-      }`}
-    >
+    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      isScrolled
+        ? "bg-transparent backdrop-blur supports-[backdrop-filter]:backdrop-blur shadow-sm"
+        : "bg-black"
+    }`}>
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - Left aligned, no background */}
         <Link
           href="/"
           aria-label="EcoNutrient home"
-          className="flex items-center bg-white/90 rounded px-2 py-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <Image
             src="/Header_Logo.svg"
             alt="EcoNutrient"
-            width={132}
-            height={36}
+            width={150}
+            height={44}
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-black">
+        {/* Desktop Nav - Right aligned */}
+        <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-label={item.label}
-              className={`group relative px-3 py-2 transition-all duration-200 text-black font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
-                pathname === item.href ? "text-black" : ""
+              aria-current={pathname === item.href ? "page" : undefined}
+              className={`relative px-3 py-2 font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+                isScrolled
+                  ? "text-black hover:text-primary"
+                  : "text-white hover:text-primary/80"
+              } ${
+                pathname === item.href
+                  ? isScrolled
+                    ? "bg-black/8 text-black rounded-full"
+                    : "bg-white/20 text-white rounded-full"
+                  : ""
               }`}
             >
               {item.label}
+              <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-200 -translate-x-1/2 group-hover:w-full"></span>
             </Link>
           ))}
           <Link
             href="/cart"
             aria-label="Shopping cart"
-            className="relative group hover:scale-105 transition-transform duration-300 hover:ring-1 hover:ring-black rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            aria-current={pathname === "/cart" ? "page" : undefined}
+            className={`relative group hover:scale-105 transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+              pathname === "/cart" ? "bg-black/8 text-white rounded-full p-2" : ""
+            }`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +86,11 @@ export default function Header() {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-6 h-6 text-black hover:text-white transition-colors duration-300"
+              className={`w-6 h-6 transition-colors duration-200 ${
+                isScrolled
+                  ? "text-black hover:text-primary"
+                  : "text-white hover:text-primary/80"
+              }`}
               aria-hidden="true"
             >
               <path
@@ -85,7 +100,7 @@ export default function Header() {
               />
             </svg>
             {count > 0 && (
-              <span className="absolute -top-2 -right-2 bg-black text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+              <span className="absolute -top-2 -right-2 bg-primary text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-medium">
                 {count}
               </span>
             )}
@@ -95,7 +110,9 @@ export default function Header() {
 
         {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-black focus:outline-none focus:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          className={`md:hidden focus:outline-none focus:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+            isScrolled ? "text-black" : "text-white"
+          }`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -122,15 +139,26 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-primary border-t border-black/10">
+        <div className={`md:hidden border-t border-gray-100 shadow-lg ${
+          isScrolled ? "bg-transparent" : "bg-black"
+        }`}>
           <nav className="px-4 py-4 space-y-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 aria-label={item.label}
-                className={`block text-black transition-colors duration-300 font-bold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:bg-black active:text-white ${
-                  pathname === item.href ? "text-black bg-white" : ""
+                aria-current={pathname === item.href ? "page" : undefined}
+                className={`block font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+                  isScrolled
+                    ? "text-black hover:text-primary"
+                    : "text-white hover:text-primary/80"
+                } ${
+                  pathname === item.href
+                    ? isScrolled
+                      ? "bg-black/8 text-black rounded-lg px-3 py-2"
+                      : "bg-white/20 text-white rounded-lg px-3 py-2"
+                    : ""
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -140,7 +168,18 @@ export default function Header() {
             <Link
               href="/cart"
               aria-label="Shopping cart"
-              className="flex items-center gap-2 text-black hover:text-white transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              aria-current={pathname === "/cart" ? "page" : undefined}
+              className={`flex items-center gap-2 font-semibold transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
+                isScrolled
+                  ? "text-black hover:text-primary"
+                  : "text-white hover:text-primary/80"
+              } ${
+                pathname === "/cart"
+                  ? isScrolled
+                    ? "bg-black/8 text-black rounded-lg px-3 py-2"
+                    : "bg-white/20 text-white rounded-lg px-3 py-2"
+                  : ""
+              }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <svg
@@ -149,7 +188,9 @@ export default function Header() {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-5 h-5"
+                className={`w-5 h-5 ${
+                  isScrolled ? "text-black" : "text-white"
+                }`}
                 aria-hidden="true"
               >
                 <path
@@ -160,7 +201,7 @@ export default function Header() {
               </svg>
               Cart
               {count > 0 && (
-                <span className="bg-black text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                <span className="bg-primary text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-medium">
                   {count}
                 </span>
               )}
